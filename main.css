@@ -1,31 +1,6 @@
 body {
-    padding: 0;
-    margin: 0;
     overflow-x: hidden;
 }
-header {
-    background-color: #7fffd4;
-    display: inline-block;
-    width: 100%;
-    height: 100px;
-}
-main {
-    background-color: #4ec79f;
-    display: inline-block;
-    width: 100%;
-    min-height: 697px;
-}
-main > * {
-    float: left;
-}
-footer {
-    background-color: #7fffd4;
-    display: inline-block;
-    width: 100%;
-    height: 140px;
-}
-
-
 
 
 .suft * {
@@ -212,7 +187,6 @@ footer {
 }
 
 
-
 .suft-selected {
     position: absolute;
     top: 0;
@@ -253,7 +227,6 @@ footer {
     height: calc(100% + 3px);
     width: 3px;
 }
-
 
 
 @keyframes candy-225 {
