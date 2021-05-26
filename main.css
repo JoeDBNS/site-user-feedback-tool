@@ -227,11 +227,6 @@ footer {
 }
 .suft-selected-active {
     opacity: 1;
-
-    top: 98px;
-    left: 198px;
-    height: 148px;
-    width: 102px;
 }
 .suft-selected-top {
     top: 0;
