@@ -136,6 +136,11 @@ footer {
     transition: .05s all;
 }
 
+.type-option-display:hover {
+    background-color: rgb(233, 242, 255);
+    border: 1px solid #cfe1ff;
+}
+
 .type-option:checked + .type-option-display {
     background-color: #F3F8FE;
     border: 1px solid #2C7AFF;
@@ -161,6 +166,9 @@ footer {
 .suft-comment label {
     display: inline-block;
     width: 100%;
+    padding: 0 2px;
+    font-size: 14px;
+    color: #4c4c4c;
 }
 
 #suft-info-comment {
@@ -186,6 +194,9 @@ footer {
 .suft-priority label {
     display: inline-block;
     width: 100%;
+    padding: 0 2px;
+    font-size: 14px;
+    color: #4c4c4c;
 }
 
 #suft-info-priority {
