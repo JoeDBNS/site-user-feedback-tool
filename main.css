@@ -103,7 +103,7 @@ footer {
 
 .suft-target-type {
     display: flex;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 }
 
 .suft-target-type-options {
@@ -146,16 +146,6 @@ footer {
     border: 1px solid #2C7AFF;
     box-shadow: 0 0 2px #2c7aff;
     color: #256be2;
-}
-
-.suft-target {
-    display: flex;
-    margin: auto;
-}
-
-.target-icon {
-    background-color: #ffeb3b;
-    border-radius: 50%;
 }
 
 .suft-comment {
