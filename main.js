@@ -9,7 +9,9 @@ let suft_status = {
     'target_draw_start_x': '',
     'target_draw_start_y': '',
     'target_draw_end_x': '',
-    'target_draw_end_y': ''
+    'target_draw_end_y': '',
+    'comment': '',
+    'priority': 'low'
 };
 
 let suft = null;
@@ -30,6 +32,9 @@ window.addEventListener('load', function() {
     suft_open = document.querySelector('.suft-toggle .toggle-button');
     suft_close = document.querySelector('.content-close .close-button');
     suft_selected = document.querySelector('.suft-selected');
+    suft_save = document.querySelector('.suft-save .save-button');
+    suft_info_comment = document.querySelector('#suft-info-comment');
+    suft_info_priority = document.querySelector('#suft-info-priority');
 
     suft_open.addEventListener('click', function() {
         SuftOpen();
@@ -37,6 +42,10 @@ window.addEventListener('load', function() {
 
     suft_close.addEventListener('click', function() {
         SuftClose();
+    });
+
+    suft_save.addEventListener('click', function() {
+        console.log(suft_user_details, suft_status);
     });
 
     window.addEventListener('scroll', function(event) {
@@ -87,6 +96,14 @@ window.addEventListener('load', function() {
             SuftResetDrawData();
             SuftResetDraw();
         });
+    });
+
+    suft_info_comment.addEventListener('change', function(event) {
+        suft_status.comment = event.target.value;
+    });
+
+    suft_info_priority.addEventListener('change', function(event) {
+        suft_status.priority = event.target.value;
     });
 });
 
@@ -176,13 +193,15 @@ function SuftResetForm() {
         target_type_checked.checked = false;
     }
 
-    document.querySelector('#suft-info-comment').value = '';
-    document.querySelector('#suft-info-priority').value = 'low';
+    suft_info_comment.value = '';
+    suft_info_priority.value = 'low';
 
+    suft_status.target_type = '';
+    suft_status.comment = '';
+    suft_status.priority = 'low';
 
     SuftResetDrawData();
     SuftResetDraw();
-    suft_status.target_type = '';
 }
 
 function SuftResetDrawData() {
