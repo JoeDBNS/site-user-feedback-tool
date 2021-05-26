@@ -219,7 +219,7 @@ footer {
     height: 0px;
     width: 0px;
     opacity: 0;
-    /* animation: 0.4s linear infinite candy-225; */
+    pointer-events: none;
 }
 .suft-selected > * {
     position: relative;
