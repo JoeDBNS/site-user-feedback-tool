@@ -28,6 +28,10 @@ window.addEventListener('load', function() {
         SuftClose();
     });
 
+    window.addEventListener('scroll', function(event) {
+        suft.style.top = 'calc(40% + ' + window.scrollY + 'px)';
+    });
+
     document.addEventListener('mousemove', function(event) {
         if (suft_status.target_type === 'draw') {
             if (suft_status.target_draw_start_x !== '' && suft_status.target_draw_end_x === '') {
