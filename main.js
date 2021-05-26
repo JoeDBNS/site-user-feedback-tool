@@ -46,7 +46,7 @@ window.addEventListener('load', function() {
         if (suft_status.target_type === 'draw') {
             if (event.button === 0) {
                 if (!IsElementInsideSuft(event.target)) {
-                    SuftResetSelected();
+                    SuftResetDraw();
                     suft_status.target_draw_end_x = '';
                     suft_status.target_draw_end_y = '';
 
@@ -68,9 +68,9 @@ window.addEventListener('load', function() {
 
     Array.from(document.querySelectorAll('[name="suft-info-target-type"]')).forEach(function(radio) {
         radio.addEventListener('change', function() {
-            SuftResetForm();
             suft_status.target_type = radio.value;
-            SuftResetSelected();
+            SuftResetDrawData();
+            SuftResetDraw();
         });
     });
 });
@@ -156,16 +156,29 @@ function SuftBuildTargetElementPath(path) {
 }
 
 function SuftResetForm() {
-    SuftResetSelected();
-    suft_status.target_element = '';
+    var target_type_checked = document.querySelector('[name="suft-info-target-type"]:checked');
+    if (target_type_checked) {
+        target_type_checked.checked = false;
+    }
+
+    document.querySelector('#suft-info-comment').value = '';
+    document.querySelector('#suft-info-priority').value = 'low';
+
+
+    SuftResetDrawData();
+    SuftResetDraw();
     suft_status.target_type = '';
+}
+
+function SuftResetDrawData() {
+    suft_status.target_element = '';
     suft_status.target_draw_start_x = '';
     suft_status.target_draw_start_y = '';
     suft_status.target_draw_end_x = '';
     suft_status.target_draw_end_y = '';
 }
 
-function SuftResetSelected() {
+function SuftResetDraw() {
     suft_selected.classList.remove('suft-selected-active');
     suft_selected.style.top = '0px';
     suft_selected.style.left = '0px';
