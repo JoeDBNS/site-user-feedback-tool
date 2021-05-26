@@ -13,7 +13,7 @@ main {
     background-color: #4ec79f;
     display: inline-block;
     width: 100%;
-    height: 697px;
+    min-height: 697px;
 }
 main > * {
     float: left;
