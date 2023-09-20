@@ -25,8 +25,8 @@ window.addEventListener('load', function() {
     const suft_form_html = parser.parseFromString(suft_form_string, "text/html");
     const suft_selected_html = parser.parseFromString(suft_selected_string, "text/html");
 
-    document.body.appendChild(suft_form_html.documentElement);
-    document.body.appendChild(suft_selected_html.documentElement);
+    document.body.appendChild(suft_form_html.documentElement.querySelector('.suft'));
+    document.body.appendChild(suft_selected_html.documentElement.querySelector('.suft-selected'));
 
     suft = document.querySelector('.suft');
     suft_open = document.querySelector('.suft-toggle .toggle-button');
