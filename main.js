@@ -45,7 +45,13 @@ window.addEventListener('load', function() {
     });
 
     suft_save.addEventListener('click', function() {
-        console.log(Date.now(), suft_user_details, suft_status);
+        console.log(
+            {
+                timestamp: Date.now(),
+                details: suft_user_details,
+                status: suft_status
+            }
+        );
     });
 
     document.addEventListener('mousemove', function(event) {
