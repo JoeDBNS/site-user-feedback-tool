@@ -63,7 +63,7 @@ window.addEventListener('load', function() {
     document.addEventListener('mousedown', function(event) {
         if (suft_status.target_type === 'element') {
             if (!IsElementInsideSuft(event.target)) {
-                suft_status.target_element = SuftBuildTargetElementPath(event.path);
+                suft_status.target_element = SuftBuildTargetElementPath(event.composedPath());
                 SuftDrawSelected(event.target.offsetTop, event.target.offsetLeft, event.target.scrollHeight, event.target.scrollWidth);
             }
         }
