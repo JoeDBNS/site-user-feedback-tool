@@ -9,13 +9,13 @@ body {
 
 .suft {
     background-color: #E7F0FE;
-    position: absolute;
+    position: fixed;
     top: 40%;
     right: -240px;
     width: 240px;
     border-radius: 7px 0 0 7px;
     box-shadow: 0 0 3px 1px #78aaff inset, 0 0 0 1px #1a4a9c inset;
-    z-index: 2;
+    z-index: 9;
     transition: linear .09s right;
 }
 
@@ -59,8 +59,7 @@ body {
 
 .suft-content {
     height: 100%;
-    width: calc(100% - 28px);
-    padding: 7px 14px 12px 14px;
+    padding: 9px 14px 12px 14px;
 }
 
 .content-close {
@@ -82,6 +81,7 @@ body {
 }
 
 .suft-target-type-options {
+    display: flex;
     background-color: #ffffff;
     height: 38px;
     margin-left: auto;
@@ -90,6 +90,10 @@ body {
     border-radius: 3px;
     overflow: hidden;
     user-select: none;
+}
+
+.suft-target-type-options label {
+    margin: 0;
 }
 
 .type-option {
@@ -101,7 +105,6 @@ body {
 
 .type-option-display {
     display: inline-block;
-    height: 24px;
     padding: 6px;
     border: 1px solid #ffffff;
     border-radius: 3px;
@@ -187,7 +190,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    padding: 6px 4px 2px 4px;
+    padding: 6px 4px;
     background-color: #d9d9ff;
     border: 1px solid #7286a1;
     border-radius: 3px;
@@ -203,6 +206,10 @@ body {
     box-shadow: 0px 0px 2px rgb(80, 80, 80) inset;
 }
 
+.save-button svg {
+    vertical-align: middle;
+}
+
 
 .suft-selected {
     position: absolute;
@@ -211,15 +218,19 @@ body {
     height: 0px;
     width: 0px;
     opacity: 0;
+    z-index: 8;
     pointer-events: none;
 }
+
 .suft-selected > * {
     position: relative;
     animation: 0.4s linear infinite candy-225;
 }
+
 .suft-selected-active {
     opacity: 1;
 }
+
 .suft-selected-top {
     top: 0;
     left: 0;
