@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
     });
 
     suft_save.addEventListener('click', function() {
-        console.log(suft_user_details, suft_status);
+        console.log(Date.now(), suft_user_details, suft_status);
     });
 
     window.addEventListener('scroll', function(event) {
