@@ -148,7 +148,7 @@ function SuftCaptureBrowserDetails() {
         suft_user_details.browser_version = navigator.userAgent.split('Safari/')[1];
     }
 
-    suft_user_details.device_platform = navigator.platform;
+    suft_user_details.device_platform = navigator.userAgentData.platform;
 
     suft_user_details.viewport_width = document.documentElement.clientWidth;
     suft_user_details.viewport_height = document.documentElement.clientHeight;
