@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
     document.addEventListener('mousemove', function(event) {
         if (suft_status.target_type === 'draw') {
             if (suft_status.target_draw_start_x !== '' && suft_status.target_draw_end_x === '') {
-                SuftDrawSelected(suft_status.target_draw_start_y, suft_status.target_draw_start_x, event.pageY - suft_status.target_draw_start_y , event.pageX - suft_status.target_draw_start_x);
+                SuftDrawSelected(suft_status.target_draw_start_y, suft_status.target_draw_start_x, event.pageY - suft_status.target_draw_start_y, event.pageX - suft_status.target_draw_start_x);
             }
         }
     });
@@ -60,7 +60,7 @@ window.addEventListener('load', function() {
         if (suft_status.target_type === 'element') {
             if (!IsElementInsideSuft(event.target)) {
                 suft_status.target_element = SuftBuildTargetElementPath(event.composedPath());
-                SuftDrawSelected(event.target.offsetTop, event.target.offsetLeft, event.target.scrollHeight, event.target.scrollWidth);
+                SuftDrawSelected(event.target.getBoundingClientRect().top + window.pageYOffset, event.target.getBoundingClientRect().x, event.target.getBoundingClientRect().height, event.target.getBoundingClientRect().width);
             }
         }
         if (suft_status.target_type === 'draw') {
