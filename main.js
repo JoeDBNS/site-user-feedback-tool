@@ -21,6 +21,10 @@ let suft_selected = null;
 
 // OnLoad Run
 window.addEventListener('load', function() {
+    InitializeSuft();
+});
+
+function InitializeSuft() {
     const parser = new DOMParser();
     const suft_form_html = parser.parseFromString(suft_form_string, "text/html");
     const suft_selected_html = parser.parseFromString(suft_selected_string, "text/html");
@@ -107,7 +111,7 @@ window.addEventListener('load', function() {
     suft_info_priority.addEventListener('change', function(event) {
         suft_status.priority = event.target.value;
     });
-});
+}
 
 function GiveAllElementsSuftId() {
     var id_inter = 0;
